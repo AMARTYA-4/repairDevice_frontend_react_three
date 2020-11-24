@@ -10,6 +10,16 @@
     background-color: white;
     background: -webkit-linear-gradient(left,#ffffff 1%,#ffffff 30%,#e5f8fc 100%);
   }
+  .logoArea{
+      margin-left: 40px;
+
+  }
+ .newLogoImg{
+     width:160px;
+     height:110px;
+     z-index: 6578;
+     background-color: #ffffff;
+ }
 .ContactButton{
     width: 150px;
     margin:3px;
@@ -66,6 +76,17 @@
     border:2px solid rgb(25, 128, 5);
 }
 @media (max-width:900px){
+    .logoArea{
+        margin-left: 0;
+      width:180px;
+      height:180px;
+    }
+   .newLogoImg{
+       width:80px;
+       height:100px;
+       z-index: 6578;
+       background-color: #ffffff;
+   }
     .whatsappIcon{
         margin:3px;
         font-size: 15px;
@@ -112,6 +133,17 @@
     }
 }
 @media (max-width:600px){
+    .logoArea{
+        margin-left: 0;
+      width:180px;
+      height:180px;
+    }
+   .newLogoImg{
+       width:80px;
+       height:90px;
+       z-index: 6578;
+       background-color: #ffffff;
+   }
     .whatsappIcon{
         margin:3px;
         font-size: 15px;
@@ -157,7 +189,31 @@
         padding: 2px;
     }
 }
-@media (max-width:300px){
+@media (max-width:420px){
+    .logoArea{
+        margin-left: 0;
+      width:90px;
+      height:80px;
+    }
+   .newLogoImg{
+       width:80px;
+       height:90px;
+       z-index: 6578;
+       background-color: #ffffff;
+   }
+}
+@media (max-width:365px){
+    .logoArea{
+        margin-left: 0;
+      width:180px;
+      height:180px;
+    }
+   .newLogoImg{
+       width:80px;
+       height:70px;
+       z-index: 6578;
+       background-color: #ffffff;
+   }
     .whatsappIcon{
         margin:3px;
         font-size: 13px;

@@ -48,8 +48,9 @@ function QuoteDetailSix(props) {
     // }
 
     let mobileLength=mobileno;
-    let splitedEmail1=email.split('.')[0];
-    let splitedEmail2=email.split('.')[1];
+    const seperator=email.lastIndexOf(".");
+    let splitedEmail1=email.substring(0,seperator);
+    let splitedEmail2=email.substring(seperator+1);
 
     // const reset=()=>{
     //   setEmailError(false);
@@ -157,8 +158,8 @@ function QuoteDetailSix(props) {
           </Grid>
           <Grid item>
             <TextField 
-            id="input-with-icon-grid"
-            type="number" 
+            id="input-with-icon-grid" 
+            type="number"
             label="Phone no." style={{ width:'270px' }}
             onChange={(e)=>setMobileNo(e.target.value)}
             />
@@ -188,8 +189,8 @@ function QuoteDetailSix(props) {
       </div>
       </div>
       <div>
-        {name.length>0 & mobileno.length===10 & email.includes(".")?(splitedEmail1.includes("@") & splitedEmail2.length>=2?
-        <Button className="col-10 col-md-4" variant="contained" color="primary"onClick={()=>sendInquary()}>
+        {name.length>0 & mobileno.length===10 & email.includes(".")?(splitedEmail1.includes("@") & 
+        splitedEmail2.length>=2?<Button className="col-10 col-md-4" variant="contained" color="primary"onClick={()=>sendInquary()}>
         Send Inquary
       </Button>:<Button variant="contained" disabled>
         Disabled

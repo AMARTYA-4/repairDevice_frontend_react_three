@@ -56,7 +56,7 @@
 }
 @media (max-width:1200px){
   .box_containerFirst{
-    width:76% ;
+    width:96% ;
     
     margin:auto;
   }
@@ -87,7 +87,7 @@
 }
 @media (max-width:992px){ 
   .box_containerFirst{
-    width:76%;
+    width:96%;
     
     margin:auto;
   }

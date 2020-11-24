@@ -25,13 +25,13 @@ const dispatch = useDispatch();
     }
   return (
     <header   className="LogoImagHeader body_header2 row"> 
-      <div className="col-md-8 col-7">
-        <div onClick= {home}>  <img  className="LogoImag" src="/geeks-logo.png" alt="logo"/>    </div> 
+      <div className="col-lg-3 col-md-2 col-5 logoArea">
+        <div onClick= {home}>  <img  className="newLogoImg" src="/logo-vertical.png" alt="logo"/>    </div> 
       </div>
       
-      <div className="col-5 col-md-4">
+      <div className="col-5 col-md-4 col-lg-4 offset-lg-4 offset-md-5 offset-2">
         <div className="row">
-      <div className="col-md-3 col-2">
+      <div className="offset-lg-1 col-md-3 col-2">
         <a href="https://api.whatsapp.com/send?phone=9933445566&text=Hi!%20I%20am%20your%20client"><button className="whatsappIcon"><i className="fab fa-whatsapp"></i></button></a>
       </div>
       <div className="col-md-8 col-8">

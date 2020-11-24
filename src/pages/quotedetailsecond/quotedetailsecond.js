@@ -59,7 +59,7 @@ function QuoteDetailSecond(props) {
 
             {allClassification?allClassification.map((item, index) => {
 
-              return (  <div key={index}  className="col-5 col-sm-5 col-md-4 col-lg-3 selectitemSecond" > 
+              return (  <div key={index}  className="col-5 col-sm-5 col-md-4 col-lg-2 selectitemSecond" > 
                 <SelectItem item={item} setItem={goNavigation} key={index} />
             </div>
               )
