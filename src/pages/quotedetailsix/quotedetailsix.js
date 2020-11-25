@@ -17,6 +17,8 @@ import Button from '@material-ui/core/Button';
 import * as ActionCreators from "../../js/actions/index";
 import "./six.css";
 
+import 'react-phone-number-input/style.css'
+import PhoneInput from 'react-phone-number-input'
 // const useStyles = makeStyles((theme) => ({
 //   root: {
 //     '& .MuiTextField-root': {
@@ -28,52 +30,34 @@ import "./six.css";
 
 function QuoteDetailSix(props) {
   const [name,setName]=useState("");
-  const [mobileno,setMobileNo]=useState("");
+  // const [mobileno,setMobileNo]=useState("");
   const [email,setEmail]=useState("");
-  
+
+  const [value, setValue] = useState("")
+
+  const [inqStart,setInqStart]=useState(false);
+
   const history = useHistory()
   useEffect(()=>{
     console.log(props.allinform);
   },[]);
 
-
-
-  // const [inputField , setInputField] = useState({
-  //     phone: '',
-  //     fullname: '',
-  //     email: ''
-  //   })
-    // const inputsHandler = (e) =>{
-    //     setInputField({ ...inputField, [e.target.name]: e.target.value })
-    // }
-
-    let mobileLength=mobileno;
+    
     const seperator=email.lastIndexOf(".");
     let splitedEmail1=email.substring(0,seperator);
     let splitedEmail2=email.substring(seperator+1);
 
-    // const reset=()=>{
-    //   setEmailError(false);
-    //   setError(false)
-    // }
-    // const submitButton = () =>{
-      
-  
- 
-    // }
-
-  
 
   useEffect(() => {
     console.log(props.fullDetails);
   }, [])
   const clientDetails={
     email,
-    phone:mobileno,
+    phone:value,
     fullname:name
   }
   const sendInquary=()=>{
-    // setInqStart(true);
+    setInqStart(true);
     fetch("/sendmail",{
       method:"post",
       headers:{
@@ -104,6 +88,10 @@ function QuoteDetailSix(props) {
       console.log(err);
       console.log("Check your details");
     })
+  }
+  const check=()=>{
+    console.log(value);
+    console.log(value.length);
   }
  
   return (
@@ -151,24 +139,7 @@ function QuoteDetailSix(props) {
           </Grid>
         </Grid>
       </div>
-      <div className="oneInput">
-        <Grid container spacing={1} alignItems="flex-end">
-          <Grid item>
-            <PhoneOutlinedIcon fontSize="large"className="iconsStyle"/>
-          </Grid>
-          <Grid item>
-            <TextField 
-            id="input-with-icon-grid" 
-            type="number"
-            label="Phone no." style={{ width:'270px' }}
-            onChange={(e)=>setMobileNo(e.target.value)}
-            />
-          </Grid>
-          <Grid item>
-            {mobileLength.length===10?<CheckIcon style={{color:"green"}}/>:<CancelIcon style={{color:"red"}}/>}
-          </Grid>
-        </Grid>
-      </div>
+      
       <div className="oneInput">
         <Grid container spacing={1} alignItems="flex-end">
           <Grid item>
@@ -187,17 +158,41 @@ function QuoteDetailSix(props) {
           </Grid>
         </Grid>
       </div>
+      <div className="oneInput">
+        <Grid container spacing={1} alignItems="flex-end">
+          
+          <Grid item>
+              <PhoneInput
+                placeholder="Enter phone number"
+                value={value}
+                style={{ width:'325px' }} 
+                onChange={setValue}/>
+          </Grid>
+      
+        </Grid>
+      </div>
       </div>
       <div>
-        {name.length>0 & mobileno.length===10 & email.includes(".")?(splitedEmail1.includes("@") & 
+        {inqStart==false?name.length>0 & email.includes(".")?(splitedEmail1.includes("@") & 
         splitedEmail2.length>=2?<Button className="col-10 col-md-4" variant="contained" color="primary"onClick={()=>sendInquary()}>
         Send Inquary
       </Button>:<Button variant="contained" disabled>
-        Disabled
+        Can't Send
       </Button>):<Button variant="contained" disabled>
-        Disabled
+        Can't Send
+      </Button>:<Button variant="contained" disabled>
+        Sending Inquary
       </Button>}
       </div>
+
+
+      {/* <PhoneInput
+      placeholder="Enter phone number"
+      value={value}
+      onChange={setValue}/>
+      <button onClick={()=>check()}>Check</button> */}
+
+
        {/* <form className={classes.root} noValidate autoComplete="off">
          <PhoneOutlinedIcon/><p>Phone No.</p>
       <TextField
