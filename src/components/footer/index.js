@@ -163,7 +163,7 @@ const now = props.value;
                   <p style={{color:"grey"}}>Device Type</p>:
                   (props.device==="current"?<p style={{color:"red"}}>Device Type</p>:
                   <p 
-                  onClick={()=>goto("/")}
+                  onClick={()=>goto("/Device")}
                   style={{cursor:"pointer",color:"green"}}>Device Type <CheckIcon style={{color:"green"}} /></p>)
                   }
                 </div>
@@ -172,7 +172,7 @@ const now = props.value;
                   null:
                   (props.device==="current"?<img src="/img/lazyLoader.gif" className="loading" alt="progress" />:
                   <p 
-                  onClick={()=>goto("/")}
+                  onClick={()=>goto("/Device")}
                   style={{cursor:"pointer"}}>{props.device}</p>)
                   }
                   {/* <img src="img/lazyLoader.gif" className="loading" alt="progress" /> */}

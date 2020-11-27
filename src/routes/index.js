@@ -1,6 +1,6 @@
 import React from "react";
 import { Switch, Route} from "react-router-dom";
-// import HomePage from "../pages/homepage/homePage";
+import HomePage from "../pages/homepage/homePage";
 import QuoteDetailFirst from "../pages/quotedetailfirst/quotedetailfirst";
 import QuoteDetailSecond from "../pages/quotedetailsecond/quotedetailsecond";
 import QuoteDetailThird from "../pages/quotedetailthird/quotedetailthird";
@@ -14,7 +14,7 @@ function Routes() {
       <Switch>
         <Route
           exact
-          path={`/`}
+          path={`/Device`}
           component={QuoteDetailFirst} 
           />
         <Route
@@ -47,6 +47,11 @@ function Routes() {
           path={`/thankyou`}
           component={QuoteDetailSeven}
         /> 
+         <Route
+          exact
+          path={`/`}
+          component={HomePage} 
+          />
         {/* <Redirect from="/" to='quotedetailfirst' /> */}
       </Switch>
   );

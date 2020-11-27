@@ -1,18 +1,18 @@
 import React from "react";
-import Header from '../../components/header';
-// import { MDBBtn,MDBIcon } from "mdbreact";
-import { useHistory } from 'react-router-dom';
+import HomeHeader from '../../components/homeHeader/homeHeader';
+
+import { Link} from 'react-router-dom';
 import "./homepage.css"
 
-const HomePage=()=>{
-    const history = useHistory();
-    const gotoBookPage=()=>{
-        history.push("/")
-    }
+function HomePage(props){
+    // const history = useHistory();
+    // const gotoBookPage=()=>{
+    //     history.push("/quotedetailfirst")
+    // }
     return(
-        <>
-            <div className="fixTop">
-                <Header/>
+        <div>
+            <div className="fixTop row">
+                <HomeHeader/>
             </div>
         <div className="Home"style={{
             backgroundImage:'url("https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")',
@@ -28,15 +28,14 @@ const HomePage=()=>{
             <div className="myMainTitle">
                 <h1 className="whatThis">Device Repair & Tech Support</h1>
                 <div className="gotoBookPage">
-                {/* <MDBBtn rounded color="info"className="bookBtn"onClick={()=>gotoBookPage()}>
-                    <MDBIcon icon="bolt" />BOOK NOW
-                </MDBBtn> */}
-                <button onClick={gotoBookPage}>Enquary now</button>
+                <Link to="/Device">
+                <button type="button" className="btn btn-info bookBtn">BOOK/INQUARY NOW</button>
+                </Link>
                 </div>
             </div>
             
         
-        </>
+        </div>
     )
 }
 export default HomePage;

@@ -123,7 +123,7 @@ export default function AlertDialog(props) {
                                       <p style={{color:"grey"}}>Device Type</p>:
                                       (props.device==="current"?<p style={{color:"red"}}>Device Type</p>:
                                       <p 
-                                      onClick={()=>goto(`/`)}
+                                      onClick={()=>goto(`/Device`)}
                                       style={{cursor:"pointer",color:"green"}}>Device Type <CheckIcon style={{color:"green"}} /></p>)
                                       }
                                     </TableCell>
@@ -132,7 +132,7 @@ export default function AlertDialog(props) {
                   null:
                   (props.device==="current"?<img src="/img/lazyLoader.gif" className="loading" alt="progress" />:
                   <p 
-                  onClick={()=>goto(`/`)}
+                  onClick={()=>goto(`/Device`)}
                   style={{cursor:"pointer"}}>{props.device}</p>)
                   }
                                       </TableCell>
