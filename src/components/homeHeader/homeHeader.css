@@ -1,6 +1,7 @@
 .homeHeader{
     z-index: 1000;
     position: fixed;
+    /* background-color: rgb(54, 40, 40) !important; */
 }
 .logoAreahome{
     margin-left: 50px;
@@ -32,7 +33,7 @@
     padding: 5px 14px;
     color:rgb(243, 242, 242);
     border:2px solid rgb(253, 3, 3);
-    background-color: rgba(253, 6, 6, 0.226);
+    background-color: rgba(253, 6, 6, 0.507);
         border: 3px solid rgb(247, 4, 4);
 }
 .ContactButtonhome:hover{
