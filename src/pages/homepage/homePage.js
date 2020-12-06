@@ -208,7 +208,7 @@ function HomePage(props){
         </div>
         
         <motion.ul
-            className="container serviceArea row"
+            className="containerHome serviceArea row"
             variants={container}
             initial="hidden"
             animate="visible"
